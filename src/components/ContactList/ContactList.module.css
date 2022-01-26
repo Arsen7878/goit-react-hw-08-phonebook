@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.item {
+  width: calc((100% / 3) - 20px);
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px;
+  transform: scale(1);
+  background-color: white;
+  border-radius: 5px;
+
+  transition: transform 250ms ease;
+}
+
+.item:hover,
+.item:focus {
+  transform: scale(1.02);
+}

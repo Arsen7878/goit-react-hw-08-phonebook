@@ -1,0 +1,1 @@
+export { endpointsContacts } from './endpoints';

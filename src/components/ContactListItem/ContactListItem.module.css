@@ -1,0 +1,21 @@
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box {
+  display: flex;
+}
+
+.number {
+  margin-left: 5px;
+}
+
+.list {
+  display: flex;
+}
+
+.item:not(:last-child) {
+  margin-right: 5px;
+}

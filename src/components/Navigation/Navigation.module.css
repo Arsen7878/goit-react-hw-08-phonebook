@@ -1,0 +1,24 @@
+.list {
+  display: flex;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.activeLink {
+  color: rgb(98, 5, 86);
+  text-decoration: underline;
+}
+
+.navBox {
+  display: flex;
+  align-items: center;
+}
