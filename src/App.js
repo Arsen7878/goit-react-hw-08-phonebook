@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 import { routes } from './routes';
 import { authOperations } from 'redux/auth';
@@ -16,6 +17,7 @@ import UpdateForm from 'components/UpdateForm';
 import MyLoader from 'components/MyLoader';
 
 import './styles/styles.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
@@ -90,6 +92,8 @@ const App = () => {
           <UpdateForm onCloseModal={onCloseModal} />
         </Modal>
       )}
+
+      <ToastContainer />
     </>
   );
 };

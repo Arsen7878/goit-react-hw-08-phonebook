@@ -2,13 +2,15 @@ import Button from 'components/Button';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import c from './ContactForm.module.css';
-import { contactsOperations } from 'redux/contatcs';
+import { contactsOperations, contactsSelectors } from 'redux/contatcs';
 import { authSelectors } from 'redux/auth';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
 
   const [number, setNumber] = useState('');
+
+  const contacts = useSelector(contactsSelectors.getContacts);
 
   const token = useSelector(authSelectors.getToken);
 
@@ -32,6 +34,13 @@ const ContactForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    const isOldContact = contacts.find(contact => contact.name === name);
+
+    if (isOldContact) {
+      alert(`${name} is already in contacts`);
+      setName('');
+      return;
+    }
 
     dispatch(contactsOperations.addContact({ user: { name, number }, token }));
 

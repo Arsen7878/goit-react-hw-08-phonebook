@@ -8,9 +8,16 @@ import {
   fetchUpdateContact,
 } from 'services/contacts/API/contactFetchAPI';
 
-export const addContact = createAsyncThunk('contact/add', ({ user, token }) => {
-  return fetchCreateContact(user, token);
-});
+export const addContact = createAsyncThunk(
+  'contact/add',
+  async ({ user, token }) => {
+    try {
+      return fetchCreateContact(user, token);
+    } catch (error) {
+      console.log('error');
+    }
+  },
+);
 
 export const deleteContact = createAsyncThunk(
   'contact/delete',

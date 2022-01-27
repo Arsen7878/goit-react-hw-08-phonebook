@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Button from '../Button';
 import { contactsOperations } from 'redux/contatcs';
@@ -48,6 +49,13 @@ const ContactListItem = ({ name, number, id, token }) => {
       </div>
     </div>
   );
+};
+
+ContactListItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  token: PropTypes.string.isRequired,
 };
 
 export default ContactListItem;

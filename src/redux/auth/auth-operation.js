@@ -6,17 +6,20 @@ import {
   fetchGetUser,
 } from 'services/user/API/userFetchAPI';
 
-export const register = createAsyncThunk('auth/register', data => {
+export const register = createAsyncThunk('auth/register', async data => {
   try {
-    return fetchRegisterUser(data);
+    const res = await fetchRegisterUser(data);
+
+    return res;
   } catch (error) {
     console.log('error register');
   }
 });
 
-export const logIn = createAsyncThunk('auth/logIn', data => {
+export const logIn = createAsyncThunk('auth/logIn', async data => {
   try {
-    return fetchLogin(data);
+    const res = await fetchLogin(data);
+    return res;
   } catch (error) {
     console.log('ошибка авторизации');
   }

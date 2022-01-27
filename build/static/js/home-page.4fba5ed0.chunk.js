@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[223],{6561:function(e,t,o){o.r(t);o(2791);var r=o(184);t.default=function(){return(0,r.jsx)("p",{className:"text",children:"Our site is designed to securely store your contacts. Log in or register to get started."})}}}]);
+//# sourceMappingURL=home-page.4fba5ed0.chunk.js.map

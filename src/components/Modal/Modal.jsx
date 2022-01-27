@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { contactsOperations } from 'redux/contatcs';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import c from './Modal.module.css';
@@ -8,8 +6,6 @@ import c from './Modal.module.css';
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = ({ children, onCloseModal }) => {
-  const dispatch = useDispatch();
-
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -36,6 +32,11 @@ const Modal = ({ children, onCloseModal }) => {
     </div>,
     modalRoot,
   );
+};
+
+Modal.propTypes = {
+  children: PropTypes.node.isRequired,
+  onCloseModal: PropTypes.func.isRequired,
 };
 
 export default Modal;

@@ -2,7 +2,7 @@ import { fetchCreator, BASE_URL, getURL } from '../../baseAPI';
 import { endpoitsUsers } from '../endpoints';
 
 // запрос на вход в существующий аккаунт
-export function fetchLogin(data) {
+export async function fetchLogin(data) {
   const options = {
     method: 'POST',
     headers: {

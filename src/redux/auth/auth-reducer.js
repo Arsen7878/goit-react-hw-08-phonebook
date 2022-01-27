@@ -10,15 +10,19 @@ const initialState = {
 
 export const authReducer = createReducer(initialState, {
   [register.fulfilled]: (state, { payload }) => {
-    state.user = payload.user;
-    state.token = payload.token;
-    state.isLoggedIn = true;
+    if (payload) {
+      state.user = payload.user;
+      state.token = payload.token;
+      state.isLoggedIn = true;
+    }
   },
 
   [logIn.fulfilled]: (state, { payload }) => {
-    state.user = payload.user;
-    state.token = payload.token;
-    state.isLoggedIn = true;
+    if (payload) {
+      state.user = payload.user;
+      state.token = payload.token;
+      state.isLoggedIn = true;
+    }
   },
   [logOut.fulfilled]: (state, _) => {
     state.user = { name: null, email: null };
